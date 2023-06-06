@@ -1,3 +1,10 @@
 #Task 1 - 5/06/2023
 1. Make a route list with 5 routes
 2. before each route put admin prefix
+
+#task2
+1. create a view with name (blogs)
+2. create a menu(Home, About, Blogs, Contact)
+3. in blog view make blogs design using bootstrap as discussed
+4. Set blogs page to by default route
+5. Make a controller blogs and call the view inside the blog controller

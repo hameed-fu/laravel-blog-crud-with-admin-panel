@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
 
 
 
@@ -29,5 +30,7 @@ Route::match(['get', 'post','delete'],'hybrid',function(){
 
 
 Route::redirect('testing', 'about', 301);
+
+Route::get('blogs',[BlogController::class,'index']);
 
 
