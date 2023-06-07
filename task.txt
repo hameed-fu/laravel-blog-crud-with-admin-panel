@@ -8,3 +8,5 @@
 3. in blog view make blogs design using bootstrap as discussed
 4. Set blogs page to by default route
 5. Make a controller blogs and call the view inside the blog controller
+
+#task 3
