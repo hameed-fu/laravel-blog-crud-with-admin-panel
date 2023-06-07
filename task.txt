@@ -10,3 +10,6 @@
 5. Make a controller blogs and call the view inside the blog controller
 
 #task 3
+
+1. redirect to blogs page after registe/login
+2. create a logout button on blogs page.
