@@ -11,5 +11,6 @@
 
 #task 3
 
-1. redirect to blogs page after registe/login
-2. create a logout button on blogs page.
+1. Set admin panel to your laravel project
+2. create two menues in sidebar(categories and items)
+3. create category and item pages
