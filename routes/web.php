@@ -17,13 +17,15 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/blogs/create', [BlogController::class, 'create'])->name('blog.create');
-    Route::post('/blogs/store', [BlogController::class, 'store'])->name('blog.add');
+    // Route::get('/blogs/create', [BlogController::class, 'create'])->name('blog.create');
+    // Route::post('/blogs/store', [BlogController::class, 'store'])->name('blog.add');
 
 });
 
 Route::prefix('admin')->group(function(){
-    Route::get('blogs', [BlogController::class, 'index']);
+    Route::get('blogs', [BlogController::class, 'index'])->name('blog.index');
+    Route::get('blogs/create', [BlogController::class, 'create'])->name('blog.create');
+    Route::post('blogs/add', [BlogController::class, 'store'])->name('blog.add');
     Route::get('detail', function(){
         return view('backend.blog_detail');
     });

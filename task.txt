@@ -1,6 +1,7 @@
 #Task 1 - 5/06/2023
 1. Make a route list with 5 routes
 2. before each route put admin prefix
+10
 
 #task2
 1. create a view with name (blogs)
@@ -12,5 +13,11 @@
 #task 3
 
 1. Set admin panel to your laravel project
-2. create two menues in sidebar(categories and items)
+2. create two menus in sidebar(categories and items)
 3. create category and item pages
+
+#task 4
+1. create a db(commerce) and create items and categories tables
+2. insert some data in these tables and show them in appropriate pages
+3. Make sure use the laravel flow.
+
