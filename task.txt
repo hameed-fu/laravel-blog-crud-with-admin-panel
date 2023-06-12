@@ -21,3 +21,6 @@
 2. insert some data in these tables and show them in appropriate pages
 3. Make sure use the laravel flow.
 
+#task 5 - 12/06/2023
+1. Perform complete crud for categories and items
+

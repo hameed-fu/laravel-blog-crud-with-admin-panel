@@ -25,7 +25,35 @@ class BlogController extends Controller
         ]);
         $msg = "Blog Added successfully";
         return redirect()->route('blog.index')->with('success', $msg);
-        // return "Blog Added successfully";
 
+    }
+
+    public function delete($id){
+        $blog = Blog::find($id)->delete();
+        $msg = "Blog Deleted successfully";
+        return redirect()->route('blog.index')->with('success', $msg);
+
+    }
+
+    function edit($id){
+        $blog = Blog::find($id);
+        // $blog = Blog::where('id', $id)->first();
+        return view('backend.blogs.edit', compact('blog'));
+    }
+    function update(Request $request){
+        $id = $request->id;
+        $title = $request->title;
+        $description = $request->description;
+        // $blog = Blog::find($id);
+        // $blog->title = $title;
+        // $blog->description = $description;
+        // $blog->save();
+        Blog::where('id',$id)
+        ->update([
+            'title' => $title,
+            'description' => $description,
+        ]);
+        $msg = "Blog Updated successfully";
+        return redirect()->route('blog.index')->with('success', $msg);
     }
 }
