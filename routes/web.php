@@ -8,6 +8,8 @@ use App\Http\Controllers\ProfileController;
 
 Route::get('/', [SiteController::class, 'blogs']);
 
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -20,19 +22,19 @@ Route::middleware('auth')->group(function () {
     // Route::get('/blogs/create', [BlogController::class, 'create'])->name('blog.create');
     // Route::post('/blogs/store', [BlogController::class, 'store'])->name('blog.add');
 
-});
+    Route::prefix('admin')->group(function(){
+        Route::get('blogs', [BlogController::class, 'index'])->name('blog.index');
+        Route::get('blogs/create', [BlogController::class, 'create'])->name('blog.create');
+        Route::post('blogs/add', [BlogController::class, 'store'])->name('blog.add');
+        Route::get('blogs/delete/{id}', [BlogController::class, 'delete'])->name('blog.delete');
+        Route::get('blogs/edit/{id}', [BlogController::class, 'edit'])->name('blog.edit');
+        Route::post('blogs/update', [BlogController::class, 'update'])->name('blog.update');
+        Route::get('detail', function(){
+            return view('backend.blog_detail');
+        });
 
-Route::prefix('admin')->group(function(){
-    Route::get('blogs', [BlogController::class, 'index'])->name('blog.index');
-    Route::get('blogs/create', [BlogController::class, 'create'])->name('blog.create');
-    Route::post('blogs/add', [BlogController::class, 'store'])->name('blog.add');
-    Route::get('blogs/delete/{id}', [BlogController::class, 'delete'])->name('blog.delete');
-    Route::get('blogs/edit/{id}', [BlogController::class, 'edit'])->name('blog.edit');
-    Route::post('blogs/update', [BlogController::class, 'update'])->name('blog.update');
-    Route::get('detail', function(){
-        return view('backend.blog_detail');
     });
-
 });
+
 
 require __DIR__.'/auth.php';
